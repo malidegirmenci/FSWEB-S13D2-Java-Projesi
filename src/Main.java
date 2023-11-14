@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        /* Finder Palindrome Function Example
         Scanner scn = new Scanner(System.in);
         System.out.println("Enter a number");
         while (isNumber(scn)) {
@@ -13,6 +14,28 @@ public class Main {
                 System.out.println(number + " is not a palindrome number");
             }
         }
+
+         */
+
+        /*Finder Perfect Number Function Example
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter a number");
+        while (isNumber(scn)) {
+            int number = scn.nextInt();
+            if(!(number <= 0)){
+                if (isPerfectNum(number)) {
+                    System.out.println(number + " is a perfect number");
+                } else {
+                    System.out.println(number + " is not a perfect number");
+                }
+            }else{
+                System.out.println("Param can not be 0 or less than 0");
+            }
+        }
+
+         */
+
+
     }
 
     /**
@@ -35,8 +58,8 @@ public class Main {
     }
 
     /**
-     * is input a number ? function
-     * @param scn input value
+     * is input a number ? func!!
+     * @param scn
      * @return true-false
      */
     public static boolean isNumber(Scanner scn) {
@@ -46,5 +69,22 @@ public class Main {
             System.out.println("Invalid entry. This is not a number.");
         }
         return false;
+    }
+
+    /**
+     * finder perfect number func!!
+     * @param num input value
+     * @return true-false
+     */
+    public static boolean isPerfectNum(int num){
+        int sumDivs = 0;
+        for(int i = 1; i < num; i++){
+            if(num % i == 0 ){
+                sumDivs += i;
+                System.out.println("sumDiv: "+ sumDivs + " i: "+i);
+            }
+        }
+        System.out.println("sumDivs: "+sumDivs);
+        return sumDivs == num;
     }
 }
