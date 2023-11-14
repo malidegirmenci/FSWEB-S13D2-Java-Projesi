@@ -34,8 +34,10 @@ public class Main {
         }
 
          */
-
-
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter a number");
+        int number = scn.nextInt();
+        System.out.println(numberToWords(number));
     }
 
     /**
@@ -78,7 +80,7 @@ public class Main {
      */
     public static boolean isPerfectNum(int num){
         int sumDivs = 0;
-        for(int i = 1; i < num; i++){
+        for(int i = 1; i < (num/2); i++){
             if(num % i == 0 ){
                 sumDivs += i;
                 System.out.println("sumDiv: "+ sumDivs + " i: "+i);
@@ -86,5 +88,20 @@ public class Main {
         }
         System.out.println("sumDivs: "+sumDivs);
         return sumDivs == num;
+    }
+    public static String numberToWords(int num){
+        if (num < 0) {
+            return "Invalid Value";
+        }
+        String strNum = Integer.toString(num);
+        System.out.println("strNum: " + strNum);
+        String[] numWords = {"Zero", "One","Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+        StringBuilder nStr = new StringBuilder();
+        int ch;
+        for(int i = 0; i < strNum.length(); i++){
+            ch = Integer.parseInt(String.valueOf(strNum.charAt(i)));
+            nStr.append(numWords[ch]).append(" ");
+        }
+        return nStr.toString();
     }
 }
