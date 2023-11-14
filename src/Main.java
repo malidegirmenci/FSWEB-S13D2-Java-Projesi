@@ -104,4 +104,14 @@ public class Main {
         }
         return nStr.toString().trim();
     }
+
+    /*
+    * Extra Questions
+    * 1-) Get even digit sum in given number
+    * -1234 = 2 + 4 = 6;
+    * 1234 = 2 + 4 = 6;
+    * 2-) Get first digit and last digit sum in given number
+    * 1234 = 1 + 4 = 5;
+    * 3-) Get same last digit in given number array
+    * */
 }
