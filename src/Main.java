@@ -102,6 +102,6 @@ public class Main {
             ch = Integer.parseInt(String.valueOf(strNum.charAt(i)));
             nStr.append(numWords[ch]).append(" ");
         }
-        return nStr.toString();
+        return nStr.toString().trim();
     }
 }
