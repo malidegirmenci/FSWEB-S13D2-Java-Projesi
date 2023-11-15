@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -34,10 +35,28 @@ public class Main {
         }
 
          */
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Enter a number");
-        int number = scn.nextInt();
-        System.out.println(numberToWords(number));
+        /* Number to Words Function Example
+            Scanner scn = new Scanner(System.in);
+            System.out.println("Enter a number");
+            int number = scn.nextInt();
+            System.out.println(numberToWords(number));
+        */
+
+        /* Even Digits Sum Function Example
+        System.out.println("Even digits sum: "+getEvenDigitsSum(123456));
+
+         */
+
+        /* First and Last Digit Sum Function Example
+        System.out.println(getFirstAndLastDigitSum(123456));
+
+         */
+
+        /* Same Last Digit in Array Function
+        System.out.println("Returns : " + getSameLastDigitInArray(12,321,21,32,42));
+
+         */
+
     }
 
     /**
@@ -114,4 +133,49 @@ public class Main {
     * 1234 = 1 + 4 = 5;
     * 3-) Get same last digit in given number array
     * */
+
+    /**
+     * Even Digits Sum Function
+     * @param num
+     * @return
+     */
+    public static int getEvenDigitsSum(int num){
+        num = Math.abs(num);
+        int sum = 0;
+        char[] digits = String.valueOf(num).toCharArray();
+        for(char digit: digits){
+            int parsedDigit = Integer.parseInt(String.valueOf(digit));
+            if(parsedDigit % 2 == 0){
+                sum += parsedDigit;
+            }
+        }
+        return sum;
+    }
+
+    /**
+     * First and Last Digit Sum Function
+     * @param num
+     * @return
+     */
+    public static int getFirstAndLastDigitSum(int num){
+        num = Math.abs(num);
+        char[] digits = String.valueOf(num).toCharArray();
+        System.out.println(digits[0]);
+        return Integer.parseInt(String.valueOf(digits[0]))+ Integer.parseInt(String.valueOf(digits[digits.length-1]));
+    }
+
+    /**
+     * Same Last Digit in Array Function
+     * @param nums
+     * @return
+     */
+    public static  boolean getSameLastDigitInArray(int... nums){
+        boolean isTrue = false;
+        for (int i = 0; i < nums.length; i++){
+            for(int j = i + 1; j < nums.length; j++){
+                isTrue = nums[i] % 10 == nums[j] % 10;
+            }
+        }
+        return isTrue ;
+    }
 }
